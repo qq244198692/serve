@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="./css/serve.css">
+    <title>服务评价</title>
+</head>
+<body>
+    <div class="serve-container">
+        <div class="serve-user">
+            <div class="serve-photo">
+                <img src="./images/user-img.png">
+            </div>
+            <div class="serve-info">
+                <div class="serve-name">李政</div>
+                <div class="serve-more">
+                    <span class="serve-more-s score">5.00</span>
+                    <span class="serve-more-s price">1</span>
+                </div>
+            </div>
+            <div class="serve-btn-box">
+                <div class="serve-btn like cur">喜欢TA</div>
+                <div class="serve-btn discontent">不满意</div>
+            </div>
+        </div>
+        <div class="serve-comment">
+            <div class="comment-box">
+                <span class="comment-item cur" lang='0'></span>
+                <span class="comment-item cur" lang='1'></span>
+                <span class="comment-item cur" lang='2'></span>
+                <span class="comment-item cur" lang='3'></span>
+                <span class="comment-item" lang='4'></span>
+            </div>
+        </div>
+        <div class="discontent-box">
+            <div class="comment-type">
+                <div class="coment-type-item">仪表不整</div>
+                <div class="coment-type-item">沟通困难</div>
+                <div class="coment-type-item">态度差</div>
+                <div class="coment-type-item">敷衍服务</div>
+            </div>
+        </div>
+        <div class="comment-text">
+            <span class="comment-msg" lang="0">评论留言区</span>
+            <div class="comment-txt">
+                <textarea class="comment-area"></textarea>
+            </div>
+        </div>
+        <div class="comment-gift">
+            <div class="like-box gift-box">
+                <div class="comment-title">夏日炎炎，小改改也不易，您可以为TA,</div>
+                <div class="comment-gift-box">
+                    <div class="gift-item">
+                        <div class="gift-item-con">
+                            <div class="gift-img xx"></div>
+                            <div class="gift-price">
+                                <span class="gift-price-s">10</span>
+                            </div>
+                            <input type="hidden" value="10" id="giftPrice">
+                        </div>
+                    </div>
+                    <div class="gift-item">
+                        <div class="gift-item-con">
+                            <div class="gift-img bbt"></div>
+                            <div class="gift-price">
+                                <span class="gift-price-s">20</span>
+                            </div>
+                            <input type="hidden" value="20" id="giftPrice">
+                        </div>
+                    </div>
+                    <div class="gift-item">
+                        <div class="gift-item-con">
+                            <div class="gift-img mgh"></div>
+                            <div class="gift-price">
+                                <span class="gift-price-s">30</span>
+                            </div>
+                            <input type="hidden" value="30" id="giftPrice">
+                        </div>
+                    </div>
+                    <div class="gift-item">
+                        <div class="gift-item-con">
+                            <div class="gift-img yt"></div>
+                            <div class="gift-price">
+                                <span class="gift-price-s">66</span>
+                            </div>
+                            <input type="hidden" value="66" id="giftPrice">
+                        </div>
+                    </div>
+                    <div class="gift-item">
+                        <div class="gift-item-con">
+                            <div class="gift-img sjp"></div>
+                            <div class="gift-price">
+                                <span class="gift-price-s">88</span>
+                            </div>
+                            <input type="hidden" value="88" id="giftPrice">
+                        </div>
+                    </div>
+                    <div class="gift-item">
+                        <div class="gift-item-con">
+                            <div class="gift-img pc"></div>
+                            <div class="gift-price">
+                                <span class="gift-price-s">99</span>
+                            </div>
+                            <input type="hidden" value="99" id="giftPrice">
+                        </div>
+                    </div>
+                    <div class="gift-item">
+                        <div class="gift-item-con">
+                            <div class="gift-img yl"></div>
+                            <div class="gift-price">
+                                <span class="gift-price-s">199</span>
+                            </div>
+                            <input type="hidden" value="199" id="giftPrice">
+                        </div>
+                    </div>
+                    <div class="gift-item other">
+                        <div class="gift-item-con">
+                            <div class="gift-img other"></div>
+                            <div class="gift-price">
+                                <span>其他金额</span>
+                                <div class="price-ipt">
+                                    <input type='number' class="price-txt">
+                                </div>
+                            </div>
+                            <input type="hidden" value="0" id="giftPrice">
+                        </div>
+                    </div>
+                </div>
+                <div class="comment-handle">
+                    <label class="comment-label">
+                        <input type="checkbox" id="checkbox-sc">
+                        <span class="checkbox-span"></span>
+                        收藏她
+                    </label>
+                    <label class="comment-label">
+                        <input type="checkbox" id="checkbox-nm">
+                        <span class="checkbox-span"></span>
+                        匿名评价
+                    </label>
+                </div>
+            </div>
+            <div class="discontent-box gift-box">
+                <div class="comment-title">您的鼓励，小改改们的动力，您可以为Ta，</div>
+                <div class="comment-gift-box">
+                    <div class="gift-item">
+                        <div class="gift-item-con">
+                            <div class="gift-img cjd"></div>
+                            <div class="gift-price">
+                                <span class="gift-price-s">0.01</span>
+                            </div>
+                            <input type="hidden" value="0.01" id="giftPrice">
+                        </div>
+                    </div>
+                    <div class="gift-item">
+                        <div class="gift-item-con">
+                            <div class="gift-img xhx"></div>
+                            <div class="gift-price">
+                                <span class="gift-price-s">1</span>
+                            </div>
+                            <input type="hidden" value="1" id="giftPrice">
+                        </div>
+                    </div>
+                    <div class="gift-item other">
+                        <div class="gift-item-con">
+                            <div class="gift-img other"></div>
+                            <div class="gift-price">
+                                <span>其他金额</span>
+                                <div class="price-ipt">
+                                    <input type='number' class="price-txt">
+                                </div>
+                            </div>
+                            <input type="hidden" value="0" id="giftPrice">
+                        </div>
+                    </div>
+                </div>
+                <div class="comment-handle">
+                    <label class="comment-label">
+                        <input type="checkbox" id="checkbox-hmd">
+                        <span class="checkbox-span"></span>
+                        加入黑名单
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sub-btn like-box active">提交</div>
+    <div class="sub-btn discontent-box active">匿名提交</div>
+
+    <script src="./js/jquery.min.js"></script>
+    <script>
+    $(function(){
+        //点击喜欢or不喜欢按钮
+        $('.serve-btn-box').on('click','.serve-btn',function(e){
+            e.stopPropagation();
+            e.preventDefault();
+            if(!$(this).hasClass('cur')){
+                $(this).siblings('.cur').removeClass('cur');
+                $(this).addClass('cur');
+                $('.comment-txt textarea').val('')
+                $('.comment-txt').hide();
+                $('.comment-msg').attr('lang','0').text('评论留言区')
+            }
+            if($(this).hasClass('like')){
+                $('.discontent-box').hide();
+                $('.like-box').show();
+                $('.comment-box .comment-item').each(function(i,v){
+                    if(i<4){
+                        $(v).addClass('cur')
+                    }else{
+                        $(v).removeClass('cur')
+                    }
+                })
+            }else if($(this).hasClass('discontent')){
+                $('.discontent-box').show();
+                $('.like-box').hide();
+                $('.comment-box .comment-item').each(function(i,v){
+                    if(i<1){
+                        $(v).addClass('cur')
+                    }else{
+                        $(v).removeClass('cur')
+                    }
+                })
+            }
+        })
+
+        //评价星星
+        $('.comment-box').on('click','.comment-item',function(){
+            var idx=$(this).attr('lang');
+            $('.comment-box .comment-item').each(function(i,v){
+                if(i<=idx){
+                    $(v).addClass('cur')
+                }else{
+                    $(v).removeClass('cur')
+                }
+            })
+        })
+
+        //点击礼物
+        $('.comment-gift').on('click','.gift-item',function(){
+            if(!$(this).hasClass('cur')){
+                $(this).siblings('.cur').removeClass('cur');
+                $(this).addClass('cur');
+            }
+            //点击其他金额
+            if($(this).hasClass('other')){
+                var that=this;
+                $(this).find('.price-ipt').show();
+                $('.price-ipt input').focus();
+                $('.price-ipt input').unbind('blur');
+                $('.price-ipt input').bind('blur',function(){
+                    if(this.value=='' || this.value==' '){
+                        $(that).find('.price-ipt').hide(); 
+                        $(that).find('#giftPrice').val(0) 
+                    }else{
+                        $(that).find('#giftPrice').val(this.value) 
+                    }
+                });
+            }
+        })
+
+        //点击差评tab
+        $('.comment-type').on('click','.coment-type-item',function(){
+            $(this).toggleClass('cur');
+        })
+
+        //点击留言
+        $('.comment-text').click(function(){
+            var msg=$(this).find('.comment-msg');
+            $('.comment-txt').show();
+            $('.comment-txt textarea').focus();
+            if(msg.attr('lang')==0){
+                $('.comment-txt textarea').val('');
+            }else if(msg.attr('lang')==1){
+                $('.comment-txt textarea').val(msg.text());
+            }
+           
+            $('.comment-txt textarea').unbind('blur');
+            $('.comment-txt textarea').bind('blur',function(){
+                if(this.value=='' || this.value==' '){
+                    msg.text('评论留言区')
+                    msg.attr('lang','0')
+                }else{
+                    msg.text(this.value)
+                    msg.attr('lang','1')
+                }
+                $('.comment-txt').hide();
+            });
+        })
+
+        //提交
+        $('.sub-btn').click(function(){
+            var star=$('.comment-box').find('.cur').length;//星星数
+            var msg=$('.comment-text').find('.comment-area').val();//评论留言
+
+            if($(this).hasClass('like-box')){//喜欢
+                var srice=$('.like-box').find('.cur').find('#giftPrice').val();//赠送的钱
+                var sc=$('#checkbox-sc:checked').length==1 ? 1:0;//是否收藏：1收藏，0不收藏
+                var nm=$('#checkbox-nm:checked').length==1 ? 1:0;//是否匿名：1匿名，0不匿名
+
+                console.log(star,msg,srice,sc,nm)
+            }else{//不满意
+                var tabs=$('.comment-type').find('.cur');
+                var tab=[];//选中的标签
+                if(tabs.length>0){
+                    tabs.each(function(i,v){
+                        tab.push(v.innerText);
+                    })
+                }
+                var srice=$('.discontent-box').find('.cur').find('#giftPrice').val();//赠送的钱
+                var hmd=$('#checkbox-hmd:checked').length==1 ? 1:0;//是否加入黑名单：1拉黑，0不拉黑
+
+                console.log(star,msg,tab,srice,hmd)
+            }
+        })
+
+        //其他金额变动
+        $('.price-txt').on('input',function(){
+            if(this.value.length==1){
+                this.value=this.value.replace(/[^1-9]/g,'')
+            }else{
+                this.value=this.value.replace(/\D/g,'')
+            }
+        })
+    })
+    </script>
+</body>
+</html>
