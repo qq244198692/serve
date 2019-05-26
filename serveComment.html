@@ -241,6 +241,8 @@
             if(!$(this).hasClass('cur')){
                 $(this).siblings('.cur').removeClass('cur');
                 $(this).addClass('cur');
+            }else{
+                $(this).removeClass('cur');
             }
             //点击其他金额
             if($(this).hasClass('other')){

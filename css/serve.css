@@ -261,7 +261,7 @@ img{display: block;width: 100%;}
 .discontent-box{
     display: none;
 }
-.cur .gift-item-con::after{
+ .gift-item-con::after{
     content: '';
     position: absolute;
     top:-1px;
@@ -269,6 +269,11 @@ img{display: block;width: 100%;}
     right: -1px;
     bottom:-1px;
     border: 2px solid #ffcb00;
+    transition: all 0.3s linear;
+    opacity: 0;
+}
+.cur .gift-item-con::after{
+    opacity: 1;
 }
 .price-ipt{
     position: absolute;
@@ -362,4 +367,37 @@ img{display: block;width: 100%;}
     color: #444;
     text-align: left;
     display: block;
+}
+
+@keyframes chooseGift{
+    0%{
+        transform: translateY(0);
+    }
+    6%{
+        transform: translateY(-15%);
+    }
+    10%{
+        transform: translateY(-20%);
+    }
+    16%{
+        transform: translateY(-0%);
+    }
+    20%{
+        transform: translateY(-8%);
+    }
+    24%{
+        transform: translateY(-0%);
+    }
+    28%{
+        transform: translateY(-5%);
+    }
+    31%{
+        transform: translateY(-0%);
+    }
+    100%{
+        transform: translateY(0); 
+    }
+}
+.cur .gift-img{
+    animation: chooseGift 3s linear;
 }
