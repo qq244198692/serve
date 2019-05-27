@@ -118,8 +118,8 @@
                         <div class="gift-item-con">
                             <div class="gift-img other"></div>
                             <div class="gift-price">
-                                <span>其他金额</span>
-                                <div class="price-ipt">
+                                <span class="other-price">其他金额</span>
+                                <div class="price-ipt gift-price-s">
                                     <input type='number' class="price-txt">
                                 </div>
                             </div>
@@ -165,8 +165,8 @@
                         <div class="gift-item-con">
                             <div class="gift-img other"></div>
                             <div class="gift-price">
-                                <span>其他金额</span>
-                                <div class="price-ipt">
+                                <span  class="other-price">其他金额</span>
+                                <div class="price-ipt gift-price-s">
                                     <input type='number' class="price-txt">
                                 </div>
                             </div>
@@ -247,16 +247,20 @@
             //点击其他金额
             if($(this).hasClass('other')){
                 var that=this;
+				$(this).find(".other-price").css('opacity',0);
                 $(this).find('.price-ipt').show();
                 $('.price-ipt input').focus();
+				$('.price-ipt input').css('border','1px solid #12d041')
                 $('.price-ipt input').unbind('blur');
                 $('.price-ipt input').bind('blur',function(){
                     if(this.value=='' || this.value==' '){
-                        $(that).find('.price-ipt').hide(); 
+                        $(that).find('.price-ipt').hide();
+						$(that).find(".other-price").css('opacity',1);
                         $(that).find('#giftPrice').val(0) 
                     }else{
                         $(that).find('#giftPrice').val(this.value) 
                     }
+					$('.price-ipt input').css('border','1px solid transparent')
                 });
             }
         })
@@ -323,6 +327,9 @@
             }else{
                 this.value=this.value.replace(/\D/g,'')
             }
+			if(this.value>999){
+				this.value=999;
+			}
         })
     })
     </script>
