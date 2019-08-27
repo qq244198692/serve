@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/rank.css">
+    <title>礼物周星榜</title>
+</head>
+<body>
+    <div class="rank-bg1">
+        <img src="images/rank-bg-1.png">
+    </div>
+    <div class="rank-bg2">
+        <img src="images/rank-bg-2.png">
+    </div>
+    <!-- 
+        /*
+        *   礼物图标添加class类名：星星：xx,棒棒糖：bbt,玫瑰花：mgh,樱桃：yt,香水：xs,跑车：pc，游轮：yl
+        *   <span class="gift-icon ys"></span>
+        */
+     -->
+    <div class="rank-welcome">
+        <img src="./images/top.png">
+    </div>
+    <div class="rank-top">
+        <img src="images/rank-top.png">
+        <div class="rank-top-list">
+            <div class="rank-t-item">
+                <div class="rank-t-item-top">
+                    <span class="gift-icon xs"></span>
+                    <span class="gift-name">香水</span>
+                </div>
+                <div class="rank-t-item-img">
+                    <img src="images/user-img.png">
+                </div>
+                <div class="rank-t-item-name">小燕子</div>
+                <div class="rank-t-item-count">收到:123456</div>
+            </div>
+            <div class="rank-t-item">
+                <div class="rank-t-item-top">
+                    <span class="gift-icon pc"></span>
+                    <span class="gift-name">跑车</span>
+                </div>
+                <div class="rank-t-item-img">
+                    <img src="images/user-img.png">
+                </div>
+                <div class="rank-t-item-name">小燕子</div>
+                <div class="rank-t-item-count">收到:123456</div>
+            </div>
+            <div class="rank-t-item">
+                <div class="rank-t-item-top">
+                    <span class="gift-icon mgh"></span>
+                    <span class="gift-name">玫瑰花</span>
+                </div>
+                <div class="rank-t-item-img">
+                    <img src="images/user-img.png">
+                </div>
+                <div class="rank-t-item-name">小燕子</div>
+                <div class="rank-t-item-count">收到:123456</div>
+            </div>
+            <div class="rank-t-item">
+                <div class="rank-t-item-top">
+                    <span class="gift-icon yt"></span>
+                    <span class="gift-name">樱桃</span>
+                </div>
+                <div class="rank-t-item-img">
+                    <img src="images/user-img.png">
+                </div>
+                <div class="rank-t-item-name">小燕子</div>
+                <div class="rank-t-item-count">收到:123456</div>
+            </div>
+        </div>
+    </div>
+    <div class="rank-list-box">
+        <div class="rank-list-tit">
+            <img src="images/rank-tit.png"> 
+        </div>
+        <div class="rank-list-tab">
+            <div class="rank-tab-item cur" lang="1">
+                <span class="gift-icon pc"></span>
+                <span class="gift-name">法拉利</span>
+            </div>
+            <div class="rank-tab-item"  lang="2">
+                <span class="gift-icon xs"></span>
+                <span class="gift-name">香水</span>
+            </div>
+            <div class="rank-tab-item" lang="3">
+                <span class="gift-icon mgh"></span>
+                <span class="gift-name">玫瑰花</span>
+            </div>
+            <div class="rank-tab-item" lang="4">
+                <span class="gift-icon bbt"></span>
+                <span class="gift-name">棒棒糖</span>
+            </div>
+        </div>
+        <div class="rank-list">
+            <div class="rank-item">
+                <div class="rank-item-l top"><img src="./images/rank-top1.png"></div>
+                <div class="rank-item-c">
+                    <div class="rank-user-img"><img src="images/user-img.png"></div>
+                    <span class="rank-item-user">花一样的年纪</span>
+                </div>
+                <div class="rank-item-r">收到:123456</div>
+            </div>
+            <div class="rank-item">
+                <div class="rank-item-l top"><img src="./images/rank-top2.png"></div>
+                <div class="rank-item-c">
+                        <div class="rank-user-img"><img src="images/user-img.png"></div>
+                    <span class="rank-item-user">花一样的年纪</span>
+                </div>
+                <div class="rank-item-r">收到:123456</div>
+            </div>
+            <div class="rank-item">
+                <div class="rank-item-l top"><img src="./images/rank-top3.png"></div>
+                <div class="rank-item-c">
+                        <div class="rank-user-img"><img src="images/user-img.png"></div>
+                    <span class="rank-item-user">花一样的年纪</span>
+                </div>
+                <div class="rank-item-r">收到:123456</div>
+            </div>
+            <div class="rank-item">
+                <div class="rank-item-l">NO.4</div>
+                <div class="rank-item-c">
+                        <div class="rank-user-img"><img src="images/user-img.png"></div>
+                    <span class="rank-item-user">花一样的年纪</span>
+                </div>
+                <div class="rank-item-r">收到:123456</div>
+            </div>
+            
+        </div>
+    </div>
+    
+    <script src="./js/jquery.min.js"></script>
+    <script>
+    $(function(){
+        $('.rank-list-tab').on('click','.rank-tab-item',function(){
+            var lang=$(this).attr('lang');
+            if(!$(this).hasClass('cur')){
+                setTimeout(function(){
+                    $(this).siblings('.cur').removeClass('cur');
+                    $(this).addClass('cur');
+                }.bind(this),200)
+                
+
+                $(this).parent().attr('lang',lang);
+            }
+        })
+    })
+    </script>
+</body>
+</html>

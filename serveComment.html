@@ -49,9 +49,12 @@
         </div>
         <div class="comment-gift">
             <div class="like-box gift-box">
-                <div class="comment-title">夏日炎炎，小改改也不易，您可以为TA,</div>
+                <div class="comment-title">漫漫长夜，小改改也不易，您可以为TA,</div>
                 <div class="comment-gift-box">
                     <div class="gift-item">
+                        <!-- 周榜礼物标志 -->
+                        <span class="weekTop"></span>
+
                         <div class="gift-item-con">
                             <div class="gift-img xx"></div>
                             <div class="gift-price">
@@ -61,6 +64,9 @@
                         </div>
                     </div>
                     <div class="gift-item">
+                        <!-- 周榜礼物标志 -->
+                        <span class="weekTop"></span>
+
                         <div class="gift-item-con">
                             <div class="gift-img bbt"></div>
                             <div class="gift-price">
@@ -127,6 +133,28 @@
                         </div>
                     </div>
                 </div>
+                <!-- 批量赠送 -->
+                <div class="take-box">
+                    <span class="take-tit">数量</span>
+                    <div class="take-list">
+                        <div class="take-list-box">
+                            <div class="take-item cur" data="1"><span>1</span></div>
+                            <div class="take-item" data="10"><span>10</span></div>
+                            <div class="take-item"  data="66"><span>66</span></div>
+                            <div class="take-item" data="100"><span>100</span></div>
+                            <div class="take-item" data="188"><span>188</span></div>
+                            <div class="take-item more" data="131.4"><span>199</span></div>
+                            <div class="take-item more" data="188"><span>520</span></div>
+                            <div class="take-item more" data="520"><span>1314</span></div>
+                            <div class="take-item more" data="1314"><span>9999</span></div>
+                            <div class="take-item more take-t" data=""><span>自定义</span></div>
+                        </div>
+                        <div class="take-more ">更多</div>
+                    </div>
+                    <!-- <div class="take-btn active">赠送</div> -->
+                </div>
+                <!-- 批量赠送end -->
+                <div class=""></div>
                 <div class="comment-handle">
                     <label class="comment-label">
                         <input type="checkbox" id="checkbox-sc">
@@ -174,6 +202,27 @@
                         </div>
                     </div>
                 </div>
+                <!-- 批量赠送 -->
+                <div class="take-box">
+                    <span class="take-tit">数量</span>
+                    <div class="take-list">
+                        <div class="take-list-box">
+                            <div class="take-item cur" data="1"><span>1</span></div>
+                            <div class="take-item" data="10"><span>10</span></div>
+                            <div class="take-item"  data="66"><span>66</span></div>
+                            <div class="take-item" data="100"><span>100</span></div>
+                            <div class="take-item" data="188"><span>188</span></div>
+                            <div class="take-item more" data="131.4"><span>199</span></div>
+                            <div class="take-item more" data="188"><span>520</span></div>
+                            <div class="take-item more" data="520"><span>1314</span></div>
+                            <div class="take-item more" data="1314"><span>9999</span></div>
+                            <div class="take-item more take-t dis" data=""><span>自定义</span></div>
+                        </div>
+                        <div class="take-more ">更多</div>
+                    </div>
+                    <!-- <div class="take-btn active">赠送</div> -->
+                </div>
+                <!-- 批量赠送end -->
                 <div class="comment-handle">
                     <label class="comment-label">
                         <input type="checkbox" id="checkbox-hmd">
@@ -184,6 +233,21 @@
             </div>
         </div>
     </div>
+    <!-- 周榜按钮 -->
+    <div class="goWeekrank"><a href="./rank.html"><img src="./images/goWeekrank.png"></a></div>
+    <!-- 周榜按钮end -->
+    <!-- 自定义数量 -->
+    <div class="takeT-mask">
+        <div class="takeT-con">
+            <div class="takeT-tit">自定义</div>
+            <div class="takeT-input">
+                <input type="number" id="takeTtxt">
+            </div>
+            <div class="takeT-btn">确定</div>
+        </div>
+    </div>
+    <!-- 自定义数量end -->
+    <div class="msg">提示：<span class="gift-price-s">1</span>价值1元RMB</div>
     <div class="sub-btn like-box active">提交</div>
     <div class="sub-btn discontent-box active">匿名提交</div>
 
@@ -327,9 +391,84 @@
             }else{
                 this.value=this.value.replace(/\D/g,'')
             }
-			if(this.value>999){
-				this.value=999;
+			if(this.value>9999){
+				this.value=9999;
 			}
+        })
+
+        //选择赠送数据
+        $('.take-list-box').on('click','.take-item',function(){
+            var data=$(this).attr('data');
+            if(!$(this).hasClass('cur')){
+                $(this).siblings('.cur').removeClass('cur');
+                $(this).addClass('cur');
+            }
+
+            //点击自定义数量
+            if($(this).hasClass("take-t")){
+                var val=$(this).attr('data');
+                if(val){
+                    $('#takeTtxt').val(val)
+                }else{
+                    $('#takeTtxt').val('')
+                }
+                $('.takeT-mask').show();
+                if($(this).hasClass('dis')){
+                    $('.takeT-mask').addClass('dis');
+                }else{
+                    $('.takeT-mask').removeClass('dis');
+                }
+                setTimeout(function(){
+                    $('.takeT-mask').addClass('show');
+                },10)
+            }
+        })
+        //提交自定数量
+        $('.takeT-btn').click(function(){
+            $('.takeT-mask').removeClass('show');
+            setTimeout(function(){
+                var val=$('#takeTtxt').val();
+                
+                if(val==0 || val=='' || val==' '){
+                    if($('.takeT-mask').hasClass('dis')){
+                        $('.discontent-box .take-t span').text('自定义');
+                        $('.discontent-box .take-t').attr('data','');
+                    }else{
+                        $('.like-box .take-t span').text('自定义');
+                        $('.like-box .take-t').attr('data','');
+                    }
+                }else{
+                    if($('.takeT-mask').hasClass('dis')){
+                        $('.discontent-box .take-t span').text(val);
+                        $('.discontent-box .take-t').attr('data',val);
+                    }else{
+                        $('.like-box .take-t span').text(val);
+                        $('.like-box .take-t').attr('data',val);
+                    }
+                    
+                }
+                $('.takeT-mask').hide();
+            },300)
+        })
+        $('#takeTtxt').on('input',function(){
+            if(this.value.length==1){
+                this.value=this.value.replace(/[^1-9]/g,'')
+            }else{
+                this.value=this.value.replace(/\D/g,'')
+            }
+        })
+        
+        $('.takeT-mask').click(function(e){
+            if(this==e.target){
+                $('.takeT-mask').removeClass('show');
+                setTimeout(function(){
+                    $('.takeT-mask').hide();
+                },300)
+            }
+        })
+        //更多
+        $('.take-more').click(function(){
+            $('.take-list-box .more').fadeToggle();
         })
     })
     </script>
